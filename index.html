@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keep Pushing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 3em;
+      margin: 0;
+      text-align: center;
+      /* Center align the text */
+      flex-grow: 1;
+      /* Allow the title to expand and take up remaining space */
+    }
+
+    .github-link {
+      font-size: 1em;
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 20px;
+      /* Add margin to separate it from the right edge */
+    }
+
+    .subtitle {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .carousel {
+      width: 60%;
+      margin: 20px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-content {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      background: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">Keep Pushing</div>
+    <a class="github-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">View on GitHub</a>
+  </div>
+  <div class="subtitle">Zsombor's and Leonardo's best moments with Arto</div>
+  <div class="subtitle">One possibility:</div>
+  <div class="carousel">
+    <div class="carousel-content">
+      <div class="carousel-item">Arto: I gotta run pick up my kids<br>Zsombor: okay, bye<br>*Arto actually starts running towards the exit*</div>
+      <div class="carousel-item">*Zsombor typing his bitwarden password*<br>Arto: “Coffeelover123”</div>
+      <div class="carousel-item">Arto: Do you wanna see something funny?<br>Zsombor: Sure!<br>*Arto makes a balloon poodle*</div>
+      <div class="carousel-item">After Zsombor rebooted cuz his mic didnt work, Arto started miming to make him believe that now his mic is not working</div>
+      <div class="carousel-item">08/01/2024<br>Leonardo: I’ll be traveling for 2 weeks and then I’ll be back in Finland<br>Arto: Will you stay here permanently then?<br>Leonardo: Yes<br>Arto: Look Charlie, Leonardo is never going to leave Finland again after this month</div>
+      <div class="carousel-item">Arto: Why did you spend a couple thousand euros to join an expensive club?<br>Leonardo: (confused) what?<br>Arto: Your Club Mate bottle looks like you’d be a member of an expensive club</div>
+      <div class="carousel-item">Charlie: What is container singularity?<br>Zsombor: some explanation about container<br>Arto: Ah, I thought you were about to make a joke about singularity<br>Zsombor: not this time<br>Arto: I was disappointed</div>
+      <div class="carousel-item">Leonardo: explaining something about his thesis<br>Arto: Why do you have ‘tits’ written on your whiteboard?</div>
+      <div class="carousel-item">Charlie: see you!<br>Arto: auf wiedersehen!<br>Leonardo: hyvää päivää<br>Arto: bonjour!</div>
+      <div class="carousel-item">Arto: yesterday, my wife told me that I’ve become a middle aged man. I’m not ready to accept that.</div>
+      <div class="carousel-item">Joel: *talks about excel spreadsheets then leaves meeting*<br>Arto: Charlie, we should also create an excel sheet, so that we can excel!</div>
+      <div class="carousel-item">Arto: *wants to fetch Charlie from his office”<br>Arto: *bangs on the door*<br>Charlie wasn’t there but a visitor was</div>
+      <div class="carousel-item">Arto: “keep pushing”</div>
+      <div class="carousel-item">Arto: Why was 6 afraid of 7?<br>Arto: Because 7 ate 9</div>
+      <div class="carousel-item"><i>"I got a job at Microsoft after completing a third of a course here - that's how effective this web course platform is."</i><br>- Ella Hartos (new FITech 101 Platform)</div>
+      <div class="carousel-item">Arto: Can I share a blasphemy that I committed today?<br>Zsombor: Yes, go ahead!<br>Arto: I made some instant coffee..<br>Zsombor: Okay, bye!<br>Arto hangs up call</div>
+      <div class="carousel-item">Zsombor (slack): Can I ask you a question about CORS?<br>Arto (slack): Of CORS!</div>
+    </div>
+    <div class="buttons">
+      <button class="button" id="prev">Prev</button>
+      <button class="button" id="next">Next</button>
+    </div>
+  </div>
+  <script>
+    const carouselContent = document.querySelector('.carousel-content');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let index = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+      if (index < totalItems - 1) {
+        index++;
+        carouselContent.style.transform = `translateX(-${index * 100}%)`;
+      }
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      if (index > 0) {
+        index--;
+        carouselContent.style.transform = `translateX(-${index * 100}%)`;
+      }
+    });
+  </script>
+</body>
+
+</html>
